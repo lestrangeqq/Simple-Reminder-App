@@ -1,6 +1,6 @@
 /*
  * v0.1
- * Lestra.
+ * Lestra. 
  */
 
 package reminder;
@@ -54,7 +54,7 @@ public class Reminder {
 			}
 			
 			//Выводим напоминалки
-			if (hours > 8 && hours < 23) {
+			if (hours > 8 && hours < 17) {
 				if (minutes == 25) {
 					trayIcon.displayMessage("Reminder", "Take a little break", TrayIcon.MessageType.INFO);
 				} else if (minutes == 50) {
