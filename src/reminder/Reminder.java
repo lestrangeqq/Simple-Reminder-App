@@ -1,6 +1,6 @@
 /*
  * v0.1
- * Lestra. 
+ * Lestra.
  */
 
 package reminder;
