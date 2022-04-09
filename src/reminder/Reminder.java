@@ -1,3 +1,8 @@
+/*
+ * v0.1
+ * Lestra.
+ */
+
 package reminder;
 
 import javax.swing.JFrame;
