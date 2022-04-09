@@ -16,15 +16,15 @@ import java.time.LocalDateTime;
 
 public class Reminder {
 	public static void main (String args[]) {
-		//Создаем главный фрэйм программы
+		//Creating main frame of program
 		JFrame frame = new JFrame("Simple Reminder");
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(300, 300);
 		frame.setVisible(true);
-		frame.setExtendedState(JFrame.ICONIFIED); //сразу скрыть прогу в трэе
+		frame.setExtendedState(JFrame.ICONIFIED); //hide program in tray
 		
-		//Создаем доступ к оповещениям в трэе
+		//Getting access to tray
 		SystemTray tray = SystemTray.getSystemTray();
 
 	    Image image = Toolkit.getDefaultToolkit().createImage("");
@@ -38,14 +38,14 @@ public class Reminder {
 			e.printStackTrace();
 		}
 		
-		//Главный цикл, проверяющий сколько сейчас времени
+		//Main cycle
 		while (true) {
 			LocalDateTime now = LocalDateTime.now();
 			int hours = now.getHour();
 			int minutes = now.getMinute();
 			int seconds = now.getSecond();
 			
-			//Усыпляем цикл, чтобы он запускался не чаще чем раз в 1 с.
+			//Hibernate cycle, so it will iterate every 1 sec.
 			long millis = System.currentTimeMillis();
 			try {
 				Thread.sleep(1000 - millis % 1000);
@@ -53,7 +53,7 @@ public class Reminder {
 				e.printStackTrace();
 			}
 			
-			//Выводим напоминалки
+			//Show reminders
 			if (hours > 8 && hours < 17) {
 				if (minutes == 25) {
 					trayIcon.displayMessage("Reminder", "Take a little break", TrayIcon.MessageType.INFO);
